@@ -1,0 +1,66 @@
+{% extends 'golfapplication.css' %}
+
+.calendar {
+  width: 98%;
+  margin: auto;
+  font-size: 13px;
+}
+
+.calendar tr, .calendar td {
+  background-color: #fdfdfd;
+  border: 1px solid black;
+}
+
+.calendar th {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.calendar td {
+  background-color: #fdfdfd;
+  width: 200px;
+  height: 150px;
+  padding: 20px 0px 0px 5px;
+}
+
+.month {
+  background-color: #fdfdfd;
+  font-size: 25px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+.special {
+  height: 100%;
+  padding: 0px 5px 0px 20px;
+}
+
+a {
+  color: #b18db8;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  text-align:center;
+}
+
+.btn {
+  outline: none;
+  color: #fdfdfd;
+  background-color: transparent;
+  box-shadow: 0 0 0 0;
+}
+
+.clearfix {
+  margin: 15px;
+}

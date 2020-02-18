@@ -1,0 +1,54 @@
+{% extends 'golfapplication/base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/golfapplication.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Golf Of Omaha</title>
+  <meta name="description" content="Golf Of Omaha">
+  <meta name="author" content="Blank">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,600" rel="stylesheet" type="text/css">
+
+	<link href="https://fonts.googleapis.com/css?family=Oswald:600,500,400" rel="stylesheet"  type="text/css">
+
+</head>
+
+<body>
+<header>
+
+</header>
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <h1>Golf Of Omaha</h1>
+    <p class="center">
+
+        <img id="landing" src="https://i.imgur.com/gBP4YV6.png" alt="Landing Image">
+
+    </p>
+  </div>
+</div>
+{% endblock %}
+
+</body>
+</html>

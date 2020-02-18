@@ -1,0 +1,143 @@
+{% extends 'golfapplication/base.html' %}
+{% load static %}
+{% load mathfilters %}
+
+{% block styles %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/golfapplication.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Golf Of Omaha</title>
+  <meta name="description" content="Golf Of Omaha">
+  <meta name="author" content="Blank">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,600" rel="stylesheet" type="text/css">
+
+	<link href="https://fonts.googleapis.com/css?family=Oswald:600,500,400" rel="stylesheet"  type="text/css">
+
+</head>
+
+<body>
+<header>
+
+</header>
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <h4 class="user">Hello {{request.user.username}}</h4>
+    <div style="text-align:right;">
+    <a class="not_user" href="{% url 'logout' %}">Isn't it you?</a>
+    </div>
+    <h1>Golf Of Omaha</h1>
+    <p class="center">
+
+        <img id="landing" src="{% static "images/bgimage.jpg" %}" alt="main"/>
+    </p>
+
+
+    {% if request.user.first_name == "golfofomahauser" %}
+
+    <div class="mc_button">
+        <a class="btn btn-info left" href="/calendar"> Slot Booking Calendar </a>
+    </div>
+
+    <div class="meal_choice_button">
+        <a class="btn btn-info left" href="/book_slot_new"> Add Slot </a>
+    </div>
+
+    <table class="golfofomaha_table">
+            <thead>
+            <tr class="golfofomaha_row">
+                <th>User</th>
+                <th>Event</th>
+                <th>Date</th>
+
+
+                <th colspan="3">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for menu_choice in menu_choices %}
+                <tr>
+                    <td>{{ menu_choice.user }}</td>
+                    <td>{{ menu_choice.event }}</td>
+                    <td>{{ menu_choice.event.start_time }}</td>
+                    <td>{{ menu_choice.time_slot }}</td>
+                    <td><a href="{% url 'golfapplication:book_slot_edit' pk=menu_choice.id %}"
+
+                           class="btn btn-info left"> Edit </a></td>
+                    <td><a href="{% url 'golfapplication:slot_booking_delete' pk=menu_choice.id %}"
+                           onclick="return confirm('Are you sure you want to delete?')"
+                           class="btn btn-info left"> Delete </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    {% elif request.user.first_name == "admin" %}
+
+    <div class="mc_button">
+        <a class="btn btn-info left" href="/calendar">Slot Booking Calendar </a>
+    </div>
+
+    <div class="meal_choice_button">
+        <a class="btn btn-info left" href="/meal_new"> Add slot </a>
+    </div>
+
+      <table class="golfofomaha_table">
+            <thead>
+            <tr class="golfofomaha_row">
+                <th>Meal</th>
+                <th>Date</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for event in events %}
+                <tr>
+                    <td>{{ event.title }}</td>
+                    <td>{{ event.start_time }}</td>
+                    <td><a href="{% url 'golfapplication:meal_edit' pk=event.id %}"
+                           class="btn btn-info left"> Edit </a></td>
+                    <td><a href="{% url 'golfapplication:meal_delete' pk=event.id %}"
+                           onclick="return confirm('Are you sure you want to delete?')"
+                           class="btn btn-info left"> Delete </a>
+                    </td>
+                    <td><a href="{% url 'golfapplication:meal_total' pk=event.pk %}"
+                           style="float:right;"
+                           class="btn btn-info left"> Total slots </a></td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+
+      {% endif %}
+
+
+  </div>
+{% endblock %}
+
+</body>
+</html>
