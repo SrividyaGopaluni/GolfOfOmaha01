@@ -52,7 +52,7 @@
     </p>
 
 
-    {% if request.user.first_name == "golfofomahauser" %}
+
 
     <div class="mc_button">
         <a class="btn btn-info left" href="/calendar"> Slot Booking Calendar </a>
@@ -92,48 +92,6 @@
             </tbody>
         </table>
 
-    {% elif request.user.first_name == "admin" %}
-
-    <div class="mc_button">
-        <a class="btn btn-info left" href="/calendar">Slot Booking Calendar </a>
-    </div>
-
-    <div class="meal_choice_button">
-        <a class="btn btn-info left" href="/meal_new"> Add slot </a>
-    </div>
-
-      <table class="golfofomaha_table">
-            <thead>
-            <tr class="golfofomaha_row">
-                <th>Meal</th>
-                <th>Date</th>
-
-
-            </tr>
-            </thead>
-            <tbody>
-            {% for event in events %}
-                <tr>
-                    <td>{{ event.title }}</td>
-                    <td>{{ event.start_time }}</td>
-                    <td><a href="{% url 'golfapplication:meal_edit' pk=event.id %}"
-                           class="btn btn-info left"> Edit </a></td>
-                    <td><a href="{% url 'golfapplication:meal_delete' pk=event.id %}"
-                           onclick="return confirm('Are you sure you want to delete?')"
-                           class="btn btn-info left"> Delete </a>
-                    </td>
-                    <td><a href="{% url 'golfapplication:meal_total' pk=event.pk %}"
-                           style="float:right;"
-                           class="btn btn-info left"> Total slots </a></td>
-
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-
-
-
-      {% endif %}
 
 
   </div>
