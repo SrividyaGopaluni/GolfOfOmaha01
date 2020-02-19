@@ -1,0 +1,44 @@
+{% extends 'golfapplication.css' %}
+
+.user {
+    text-align:right;
+    font-size:14px;
+    font-weight:500;
+    padding-right: 2%;
+}
+
+.not_user {
+    font-size:10px;
+    padding-right: 2%;
+    position:relative; bottom: 40px;
+    font-weight:bold;
+}
+
+#landing {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position:relative; bottom: 100px;
+}
+
+.mc_button {
+    position:relative; bottom: 250px;
+    float:left;
+}
+
+.meal_choice_button {
+    position:relative; bottom: 250px;
+    float:right;
+}
+
+.golfofomaha_table {
+    position:relative; bottom: 230px;
+    width: 98%;
+    margin: auto;
+    font-size: 13px;
+    background-color: #fdfdfd;
+}
+
+.golfofomaha_row {
+    background-color: #fdfdfd;
+}

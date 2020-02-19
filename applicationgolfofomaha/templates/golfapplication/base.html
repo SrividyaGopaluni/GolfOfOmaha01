@@ -1,0 +1,66 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>Golf Of Omaha</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/design.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {% block styles %}
+    {% endblock %}
+
+
+<html lang="en">
+<head>
+    <title>Golf Of Omaha</title>
+
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Golf Of Omaha</title>
+  <meta name="description" content="Golf Of Omaha">
+  <meta name="author" content="Vidya">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,600" rel="stylesheet" type="text/css">
+
+	<link href="https://fonts.googleapis.com/css?family=Oswald:600,500,400" rel="stylesheet"  type="text/css">
+
+</head>
+<body>
+<header>
+  <!--put navigation here -->
+  <ul id="nav">
+
+    <li><a href="/house">Home</a></li>
+	<li><a href="/calendar">Slot Booking Calendar</a></li>
+    <li><a href="/contactus">ContactUs</a></li>
+      {% if user.is_authenticated %}
+            <li><a href="/edit_account">Change Account</a></li>
+            <li><a href="{% url 'logout' %}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+      {% else %}
+
+            <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      {% endif %}
+  </ul>
+</header>
+{% block content %}
+<div class="container">
+  <div class="row">
+    <h1>Page Title</h1>
+    <p class="center">Put stuff in here</p>
+</div>
+</div>
+{% endblock %}
+</body>
+</html>

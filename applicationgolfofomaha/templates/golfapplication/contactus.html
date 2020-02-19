@@ -1,0 +1,181 @@
+{% extends 'golfapplication/base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/golfapplication.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+{% endblock %}
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Golf Of Omaha</title>
+  <meta name="description" content="Golf Of Omaha">
+  <meta name="author" content="Blank">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,600" rel="stylesheet" type="text/css">
+
+	<link href="https://fonts.googleapis.com/css?family=Oswald:600,500,400" rel="stylesheet"  type="text/css">
+
+
+</head>
+
+<body>
+
+
+
+<header>
+
+</header>
+{% block content %}
+<!-- The container buttons with the question as the button and answer appears upon clicking.
+This also includes the scripts, which are setup per button currently, but may be changed in the future.-->
+<div class="container">
+<div style="text-align:center;">
+  <div class="row">
+    <h1>Contact Us</h1>
+    <p class="center"><b>Contact us</b></p>
+      <p>If you have any questiopns about your slot booking and anything we can help you with please call us
+                            @ +1-402-990-8201</p>
+      <p>                   Email : golfofomaha@gmail.com</p>
+      <p>                   here are few frequently asked questions</p>
+
+    <button class="btn btn-info left" onclick="myFunction()">What timing is Golf Of Omaha open</button>
+    <div id="myDIV" style="display:none">
+    Sunday 1PM-11PM
+     Saturday 1PM-1AM
+     Monday to Friday 5PM- 10PM
+    </div>
+    <br>
+    <br>
+
+    <button class="btn btn-info left" onclick="myFunction2()">Do you guys server food</button>
+    <div id="myDIV2" style="display:none">
+    A variety of food options options are served but kitchen is closed from 10PM. All Food orders are taken before that.
+    </div>
+    <br>
+    <br>
+
+    <button class="btn btn-info left" onclick="myFunction3()">What number can I call with questions?</button>
+    <div id="myDIV3" style="display:none">
+    For any questions or concerns call: (402) 990 - 8201
+    </div>
+    <br>
+    <br>
+
+    <button class="btn btn-info left" onclick="myFunction4()">Where do i change/cancel my slotbooking</button>
+    <div id="myDIV4" style="display:none">
+    Please call : (402) 990 - 8201
+    </div>
+    <br>
+    <br>
+
+    <button class="btn btn-info left" onclick="myFunction5()" >Do you have Vegan options</button>
+    <div id="myDIV5" style="display:none">
+    Absolutely Yes.!!
+    </div>
+    <br>
+    <br>
+
+
+</div>
+
+  <!-- Keep these closed unless you need a copy, they add a bit of extra code to the document and can be a tad bit annoying.
+  Especially since they're repeated. Code was found only and duplicated for the results.-->
+  <script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+  </script>
+  <script>
+function myFunction2() {
+  var x = document.getElementById("myDIV2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+  <script>
+function myFunction3() {
+  var x = document.getElementById("myDIV3");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+  <script>
+function myFunction4() {
+  var x = document.getElementById("myDIV4");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+  </script>
+  <script>
+function myFunction5() {
+  var x = document.getElementById("myDIV5");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+  </script>
+  <script>
+function myFunction6() {
+  var x = document.getElementById("myDIV6");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+  </script>
+  <script>
+function myFunction7() {
+  var x = document.getElementById("myDIV7");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+  </script>
+
+
+
+
+</div>
+</div>
+</div>
+
+
+{% endblock %}
+
+</body>
+</html>
