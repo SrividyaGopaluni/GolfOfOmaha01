@@ -63,8 +63,7 @@ class SlotBooking(models.Model):
     def __str__(self):
         return str(self.event)
 
-    #class Meta:
-     #   unique_together = (("user" ),)
+
 
     def created(self):
         self.created_date = timezone.now()
@@ -75,8 +74,6 @@ class SlotBooking(models.Model):
         self.save()
 
 
-#    def __str__(self):
-#        return str(self.event)
 
 
 
