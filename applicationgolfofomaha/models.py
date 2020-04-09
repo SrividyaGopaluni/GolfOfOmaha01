@@ -54,6 +54,7 @@ class Event(models.Model):
 
 
 class SlotBooking(models.Model):
+
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='User_slot_event', null=True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='event_choice')
     timeslot = models.TimeField("Time")
@@ -62,8 +63,8 @@ class SlotBooking(models.Model):
     def __str__(self):
         return str(self.event)
 
-    class Meta:
-        unique_together = (("user", "event"),)
+    #class Meta:
+     #   unique_together = (("user" ),)
 
     def created(self):
         self.created_date = timezone.now()
